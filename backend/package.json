@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js",
+    "reset": "npx knex migrate:rollback --all && npx knex migrate:latest && npx knex seed:run",
+    "spinup1": "bash -c \"docker run --name database -e=POSTGRES_PASSWORD=docker -d -p 5000:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres\"",
+    "spinup2": "docker exec -it database psql -U postgres -c \"CREATE DATABASE inventory_db;\"",
+    "spinup3": "npx knex migrate:latest && npx knex seed:run",
+    "spinup": "npm run spinup1 && npm run spinup2 && npm run spinup3",
+    "docker-reset": "docker exec -it database psql -U postgres -c \"DROP DATABASE inventory_db;\"",
+    "psql": "docker exec -it database psql -U postgres"
   },
   "keywords": [],
   "author": "",

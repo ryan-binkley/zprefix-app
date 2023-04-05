@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Header, Login, PersonalInv } from './Components/ExportComponents';
+
+export const Distribution = React.createContext();
+
+
 
 function App() {
+  const [loggedin, setLoggedin] = useState(false)
+  const [userData, setUserData] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Distribution.Provider value={{ loggedin, setLoggedin, userData, setUserData, allUsers, setAllUsers }}>
+      <div className='App'>
+        <Header />
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/personalinventory' element={<PersonalInv />} />
+        </Routes>
+      </div>
+    </Distribution.Provider>
   );
 }
 
