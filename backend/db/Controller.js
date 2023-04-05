@@ -16,20 +16,7 @@ const getUserByID = (inputID) => {
         .where({user_id:inputID});
 }
 
-// ***** Movies table *****
-
-const getMovies = () => {
-    return knexToDB
-        .select('*')
-        .from('movies');
-}
-
-const getMovieByID = (inputID) => {
-    return knexToDB
-        .select('*')
-        .from('movies')
-        .where({movie_id:inputID});
-}
+// ***** Items table *****
 
 
-export { getUsers, getUserByID, getMovies, getMovieByID };
+export { getUsers, getUserByID };

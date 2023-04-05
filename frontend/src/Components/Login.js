@@ -12,7 +12,7 @@ export const Login = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:8082/users")
+        fetch("http://localhost:4000/users")
             .then(response => response.json())
             .then(data => {
                 setAllUsers(data)

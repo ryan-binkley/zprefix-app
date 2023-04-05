@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
-import { Header, Login, PersonalInv } from './Components/ExportComponents';
+import { Header, Login, PersonalInv, Signup } from './Components/ExportComponents';
 
 export const Distribution = React.createContext();
 
@@ -18,6 +18,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
           <Route path='/personalinventory' element={<PersonalInv />} />
         </Routes>
       </div>
