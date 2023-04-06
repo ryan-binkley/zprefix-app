@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Col, Row, Container } from "react-bootstrap";
-// import './Signup.css';
+import { Col, Row, Container, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css"
+import '../ComponentCSS/Signup.css';
 
 export const Signup = () => {
     const [username, setUsername] = useState([]);
@@ -25,7 +26,12 @@ export const Signup = () => {
     }
 
     const newUser = () => {
-        const newUser = { "username": username, "first name": firstName, "last name": lastName, "password": password }
+        const newUser = {
+            "username": username,
+            "password": password,
+            "first_name": firstName,
+            "last_name": lastName
+        }
 
         fetch('http://localhost:4000/signup', {
             method: "POST",
@@ -36,14 +42,12 @@ export const Signup = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                if (data.message === 'The data you are looking for could not be found. Please try again.') {
-                    alert('Unable to create new user. Please make sure you have input valid entries and try again.')
-                } else if (data.message === 'New user created.') {
-                    alert("New user created, you're being navigated to the login page.", navigate('/login'))
-                }
+                alert("New user created! You will be redirected to the login page now.");
+                navigate('/login');
                 console.log("Success:", data);
             })
             .catch((error) => {
+                alert("Could not create user.");
                 console.error("Error:", error);
             });
     }
@@ -51,29 +55,29 @@ export const Signup = () => {
 
 
     return (
-            <div id='headerDisplacer'>
-                <Container>
-                <Row><div>Please enter the information below</div></Row>
+        <div id='headerDisplacer' className="square rounded-4 border-dark border border-4">
+            <Container>
+                <Row><div className="signupstuffheader">SIGNUP</div></Row>
                 <Row>
-                    <Row>
-                        <Col>First name: </Col>
-                        <Col><input type='field' placeholder="First name" onChange={handleChangeFirstName} /></Col>
-                    </Row>   
-                    <Row>
-                        <Col>Last name: </Col>
-                        <Col><input type='field' placeholder="Last name" onChange={handleChangeLastName} /></Col>
-                    </Row> 
-                    <Row>
-                        <Col>Username: </Col>
-                        <Col><input type='username' placeholder="Username" onChange={handleChangeUsername} /></Col>
-                    </Row> 
-                    <Row>
-                        <Col>Password: </Col>
-                        <Col><input type='password' placeholder="Password" onChange={handleChangePassword} /></Col>
+                    <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                        <Col className="signupstuff">First name: </Col>
+                        <Col className="signupstuff"><input type='field' placeholder="First name" onChange={handleChangeFirstName} /></Col>
+                    </Row>
+                    <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                        <Col className="signupstuff">Last name: </Col>
+                        <Col className="signupstuff"><input type='field' placeholder="Last name" onChange={handleChangeLastName} /></Col>
+                    </Row>
+                    <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                        <Col className="signupstuff">Username: </Col>
+                        <Col className="signupstuff"><input type='username' placeholder="Username" onChange={handleChangeUsername} /></Col>
+                    </Row>
+                    <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                        <Col className="signupstuff">Password: </Col>
+                        <Col className="signupstuff"><input type='password' placeholder="Password" onChange={handleChangePassword} /></Col>
                     </Row>
                 </Row>
-                <button className="signupButton" onClick={newUser}>Sign Up</button> <br />
-                </Container>
-            </div>
+                <Button className="btn btn-light signuppagesignupbutton" onClick={newUser}>Sign Up</Button> <br />
+            </Container>
+        </div>
     )
 }

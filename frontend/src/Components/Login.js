@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Distribution } from "../App";
 import { useNavigate } from "react-router-dom";
-// import './Login.css';
-import { Col, Row } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Col, Row, Button } from "react-bootstrap";
+import '../ComponentCSS/Login.css';
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -29,19 +30,21 @@ export const Login = () => {
     }
 
     return (
-        <div id='headerDisplacer'>
+        <div id='headerDisplacer' className="rounded-4 border-dark border border-4">
+            <p className="logintext">LOGIN</p>
+
             <Row>
-                <Row>
-                    <Col>Username: </Col>
-                    <Col><input type='field' placeholder="Username" onChange={handleChangeUsername} /></Col>
+                <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                    <Col className="loginusername">Username: </Col>
+                    <Col className="loginusername"><input type='field' placeholder="Username" onChange={handleChangeUsername} /></Col>
                 </Row>
-                <Row>
-                    <Col>Password: </Col>
-                    <Col><input type='password' placeholder="Password" onChange={handleChangePassword} /></Col>
+                <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                    <Col className="loginpassword">Password: </Col>
+                    <Col className="loginpassword"><input type='password' placeholder="Password" onChange={handleChangePassword} /></Col>
                 </Row>
             </Row>
 
-            <button className="loginButton" onClick={() => {
+            <Button className="btn btn-light loginbuttonforloginpage" onClick={() => {
                 var login_check = 'no';
 
                 allUsers.map(user => {
@@ -59,7 +62,7 @@ export const Login = () => {
                     alert('Username or Password is incorrect.')
                 }
             }
-            }>Login</button> <br />
+            }>Login</Button> <br />
         </div>
     )
 }

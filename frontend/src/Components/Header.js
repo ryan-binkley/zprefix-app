@@ -1,33 +1,35 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Distribution } from '../App';
-// import './Header.css';
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../ComponentCSS/Header.css";
 
 export const Header = () => {
 
     const navigate = useNavigate();
-    const { loggedin, setLoggedin, setUserData } = useContext(Distribution)
+    const { loggedin, setLoggedin, userData, setUserData } = useContext(Distribution)
 
     return (
-        <>
-            <div id='wrapper'>
-                <div id='user buttons'>
-                    {loggedin ?
-                        <>
-                            <button className="headerButton2" onClick={() => {
-                                setLoggedin(false)
-                                navigate("/")
-                                setUserData([]);
-                            }}>Sign Out</button>
-                        </>
-                        :
-                        <>
-                            <button className="headerButton1" onClick={() => navigate("/login")}>Login</button>
-                            <button className="headerButton1" onClick={() => navigate("/signup")}>Sign Up</button>
-                        </>
-                    }
-                </div>
-            </div>
-        </>
+        <div id='user_buttons'>
+            {loggedin ?
+                <>
+                    <p id='currentusertext' className='currentloggedinuser'>User: {userData[0].first_name} {userData[0].last_name}</p>
+                    <Button className="btn btn-light signoutbutton" onClick={() => {
+                        setLoggedin(false)
+                        navigate("/")
+                        setUserData([]);
+                    }}>Sign Out</Button>
+                </>
+                :
+                <>
+                    <div id='currentusertext'>User: Visitor</div>
+                    <div className="loginandsignupbuttons">
+                        <Button className="btn btn-light loginbutton" onClick={() => navigate("/login")}>Login</Button>
+                        <Button className="signupbutton btn btn-light" onClick={() => navigate("/signup")}>Sign Up</Button>
+                    </div>
+                </>
+            }
+        </div>
     )
 }

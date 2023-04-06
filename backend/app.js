@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 
 // Methods from Controller.js
-import { getUsers, getUserByID } from "./db/Controller.js";
+import { getUsers, getUserByID, newUser, getItems } from "./db/Controller.js";
 
 
 const app = express();
@@ -43,3 +43,25 @@ app.get("/users/:id", (req, res) => {
         })
 });
 
+app.post("/signup", (req, res) => {
+    newUser(req.body)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.send(err);
+        })
+})
+
+
+// ***** Users table *****
+
+app.get("/items", (req, res) => {
+    getItems()
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.send(err);
+        })
+});

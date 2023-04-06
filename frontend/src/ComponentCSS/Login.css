@@ -1,0 +1,27 @@
+#headerDisplacer {
+    margin-top: 100px;
+    margin-left: 700px;
+    margin-right: 700px;
+    min-height: 500px;
+    background-color: #FFA559;
+    border: #454545;
+    border-width: 5px;
+}
+
+.loginusername {
+    margin-top: 60px;
+}
+
+.loginpassword {
+    margin-top: 60px;
+}
+
+.loginbuttonforloginpage {
+    margin-top: 100px;
+}
+
+.logintext {
+    font-size: xx-large;
+    font-weight: 800;
+    padding-top: 50px;
+}
