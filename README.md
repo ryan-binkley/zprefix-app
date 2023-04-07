@@ -21,6 +21,10 @@
   - BACKEND --- Navigate to the backend directory using `cd backend`. Run `npm i` in the terminal. Run `npm run spinup` in the terminal. Lastly, run `npm start`.
   - FRONTEND --- Open a new terminal to run the frontend. Ensure you are in the `ryanbinkleyzprefix` directory. Navigate to the frontend directory using `cd frontend`. Run `npm i` in the terminal. Lastly, run `npm start` in the terminal.
 
+- The Frontend Application can be accessed on `http://localhost:3000/`
+- The Backend Express Application can be accessed on `http://localhost:4000/`
+- The Docker postgres container can be accessed on `http://localhost:5000/`
+
 
 ## Description
 &emsp; This inventory management system is a simple way for individual users to keep track of their items. They can do so as a (default)visitor, or as a registered user. A visitor has limited permissions(only to read) whereas the registered user has the ability to modify, add, delete, and read all items in the database.
