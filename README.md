@@ -1,7 +1,6 @@
-## SDI Full-Stack Application Project 3
+## ZPrefix CRUD Application
 
 <br/>
-
 
 ## Table of Contents
 - Overview
