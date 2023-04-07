@@ -1,4 +1,4 @@
-<h2 align='center'> ZPrefix CRUD Application </h2>
+<h1 align='center'> ZPrefix CRUD Application </h1>
 
 <br/>
 
@@ -18,8 +18,8 @@
 - Ensure docker and node are installed on your machine.
 - Open a terminal of any flavor. Grab the ssh for this repository `git@github.com:ryan-binkley/zprefix-app.git` and clone the database into your terminal. ie. `git clone git@github.com:ryan-binkley/zprefix-app.git ryanbinkleyzprefix`. This will clone the repository into the `ryanbinkleyzprefix` directory.
   - Navigate to the cloned directory using `cd ryanbinkleyzprefix`.
-  - BACKEND Navigate to the backend directory using `cd backend`. Run `npm i` in the terminal. Run `npm run spinup` in the terminal. Lastly, run `npm start`.
-  - FRONTEND Open a new terminal to run the frontend. Ensure you are in the `ryanbinkleyzprefix` directory. Navigate to the frontend directory using `cd frontend`. Run `npm i` in the terminal. Lastly, run `npm start` in the terminal.
+  - BACKEND --- Navigate to the backend directory using `cd backend`. Run `npm i` in the terminal. Run `npm run spinup` in the terminal. Lastly, run `npm start`.
+  - FRONTEND --- Open a new terminal to run the frontend. Ensure you are in the `ryanbinkleyzprefix` directory. Navigate to the frontend directory using `cd frontend`. Run `npm i` in the terminal. Lastly, run `npm start` in the terminal.
 
 
 ## Description
