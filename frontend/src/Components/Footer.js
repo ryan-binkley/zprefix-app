@@ -1,7 +1,4 @@
-import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Distribution } from '../App';
-import { Button } from "react-bootstrap";
+import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../ComponentCSS/Footer.css";
 

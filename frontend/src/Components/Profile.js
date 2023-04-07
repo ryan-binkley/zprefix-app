@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Distribution } from "../App";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Row, Button } from "react-bootstrap";
 import { Container } from './Container';

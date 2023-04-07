@@ -1,6 +1,6 @@
 import './App.css';
-import { Routes, Route, Link } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
 import { Header, Login, PersonalInv, Signup, Footer, VisitorInventory, ItemDetails, AddItem, Profile } from './Components/ExportComponents';
 
 export const Distribution = React.createContext();

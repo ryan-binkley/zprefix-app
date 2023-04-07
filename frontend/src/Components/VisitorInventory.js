@@ -1,10 +1,9 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Distribution } from "../App";
 import { useNavigate } from "react-router-dom";
 import { Col, Row, Button } from "react-bootstrap";
 import { Container } from "./Container.js";
 import '../ComponentCSS/VisitorInventory.css';
-import { ItemDetails } from "./ItemDetails";
 
 export const VisitorInventory = () => {
     const { allItems, setAllItems } = useContext(Distribution);
