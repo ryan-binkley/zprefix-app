@@ -1,0 +1,11 @@
+.usertext {
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+#seteditmodebutton {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,49 @@
+.itemmaincontainer {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#itembox {
+    height: 500px;
+    width: 500px;
+}
+
+.itemname {
+    margin-top: 10px;
+    font-weight: 700;
+    
+}
+
+.itemquantity {
+    margin-top: 10px;
+    font-weight: 700;
+    
+}
+
+.itemowner {
+    margin-top: 10px;
+    font-weight: 700;
+    
+}
+
+.itemdescriptionitemdetails {
+    margin-top: 10px;
+    font-weight: 700;
+    
+}
+
+#specificeditbutton {
+    margin-top: 15px;
+    margin-right: 30px;
+}
+
+#specificdeletebutton {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+#saveitembutton {
+    margin-top: 15px;
+}

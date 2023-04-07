@@ -1,10 +1,18 @@
-.maincontainer {
-    margin-top: 40px;
+.maincontainerpersonal {
+    margin-top: 0px;
     margin-left: 40px;
     margin-right: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 }
 
 .individualcontainers {
     margin-bottom: 40px;
+}
+
+.additembutton {
+    position: sticky;
+    width: 200px;
+    height: 60px;
+    top:10px;
+    margin-bottom: 30px;
 }

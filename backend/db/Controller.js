@@ -12,15 +12,13 @@ const getUsers = () => {
 
 const getUserByID = (inputID) => {
     return knexToDB
-        .select('*')
         .from('users')
-        .where({user_id:inputID});
+        .where('id', '=', inputID);
 }
 
 const patchUserByID = (inputID, updatedUser) => {
     return knexToDB('users')
-        .select('*')
-        .where({user_id:inputID})
+        .where('id', '=', inputID)
         .update(updatedUser);
 }
 
@@ -34,10 +32,45 @@ const newUser = (newUser) => {
 
 const getItems = () => {
     return knexToDB
-        .select('*')
-        .from('items')
-        .orderBy('id');
+        .select('first_name', 'last_name', 'items.id', 'item_name', 'description', 'quantity')
+        .from('users')
+        .join('items', 'users.id', '=', 'items.user_id')
+        .orderBy('items.id');
 }
 
+const getItemByID = (inputID) => {
+    return knexToDB
+        .select('first_name', 'last_name', 'items.user_id', 'items.id', 'item_name', 'description', 'quantity')
+        .from('users')
+        .join('items', 'users.id', '=', 'items.user_id')
+        .where('items.id', '=', inputID)
+        .orderBy('items.id');
+}
 
-export { getUsers, getUserByID, newUser, getItems };
+const getItemsByUserID = (inputUserID) => {
+    return knexToDB
+        .select('first_name', 'last_name', 'items.id', 'item_name', 'description', 'quantity')
+        .from('users')
+        .join('items', 'users.id', '=', 'items.user_id')
+        .where('items.user_id', '=', inputUserID)
+        .orderBy('items.id');
+}
+
+const addItem = (inputItem) => {
+    return knexToDB('items')
+        .insert(inputItem);
+}
+
+const deleteItem = (inputID) => {
+    return knexToDB('items')
+        .where('id', '=', inputID)
+        .del();
+}
+
+const updateItem = (inputID, inputObject) => {
+    return knexToDB('items')
+        .where('items.id', '=', inputID)
+        .update(inputObject);
+}
+
+export { getUsers, getUserByID, patchUserByID, newUser, getItems, getItemByID, getItemsByUserID, addItem, deleteItem, updateItem };

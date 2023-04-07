@@ -12,9 +12,17 @@ export const Header = () => {
 
     return (
         <div id='user_buttons'>
+            <div>
+                <Button className='fullinventorybutton btn btn-light' onClick={() => navigate("/")}>Full Inventory</Button>
+                <div className='title'>Inventory Tracker</div>
+            </div>
             {loggedin ?
                 <>
+                    <div>
+                        <Button className='personalinventorybutton btn btn-light' onClick={() => navigate("/personalinventory")}>My Inventory</Button>
+                    </div>
                     <p id='currentusertext' className='currentloggedinuser'>User: {userData[0].first_name} {userData[0].last_name}</p>
+                    <Button variant="light" id='profilebutton' onClick={() => navigate('/profile')}>Profile</Button>
                     <Button className="btn btn-light signoutbutton" onClick={() => {
                         setLoggedin(false)
                         navigate("/")

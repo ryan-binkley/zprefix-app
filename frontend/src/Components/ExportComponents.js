@@ -5,3 +5,6 @@ export * from './Signup';
 export * from './Footer';
 export * from './Container';
 export * from './VisitorInventory';
+export * from './ItemDetails';
+export * from './AddItem';
+export * from './Profile';

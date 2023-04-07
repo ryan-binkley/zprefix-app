@@ -1,0 +1,21 @@
+.itemdescription {
+    position: fixed;
+    top: 90px;
+    right: 190px;
+    font-weight: 700;
+}
+
+#inputdescription {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    height: 150px;
+    max-height: 150px;
+    
+}
+
+#addbutton {
+    position: absolute;
+    top: 250px;
+    right: 118px;
+}

@@ -34,11 +34,11 @@ export const Login = () => {
             <p className="logintext">LOGIN</p>
 
             <Row>
-                <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                <Row style={{ paddingLeft: 80, paddingRight: 80 }}>
                     <Col className="loginusername">Username: </Col>
                     <Col className="loginusername"><input type='field' placeholder="Username" onChange={handleChangeUsername} /></Col>
                 </Row>
-                <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                <Row style={{ paddingLeft: 80, paddingRight: 80 }}>
                     <Col className="loginpassword">Password: </Col>
                     <Col className="loginpassword"><input type='password' placeholder="Password" onChange={handleChangePassword} /></Col>
                 </Row>

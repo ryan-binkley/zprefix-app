@@ -59,19 +59,19 @@ export const Signup = () => {
             <Container>
                 <Row><div className="signupstuffheader">SIGNUP</div></Row>
                 <Row>
-                    <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                    <Row style={{ paddingLeft: 80, paddingRight: 80 }}>
                         <Col className="signupstuff">First name: </Col>
                         <Col className="signupstuff"><input type='field' placeholder="First name" onChange={handleChangeFirstName} /></Col>
                     </Row>
-                    <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                    <Row style={{ paddingLeft: 80, paddingRight: 80 }}>
                         <Col className="signupstuff">Last name: </Col>
                         <Col className="signupstuff"><input type='field' placeholder="Last name" onChange={handleChangeLastName} /></Col>
                     </Row>
-                    <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                    <Row style={{ paddingLeft: 80, paddingRight: 80 }}>
                         <Col className="signupstuff">Username: </Col>
                         <Col className="signupstuff"><input type='username' placeholder="Username" onChange={handleChangeUsername} /></Col>
                     </Row>
-                    <Row style={{ paddingLeft:80, paddingRight:80 }}>
+                    <Row style={{ paddingLeft: 80, paddingRight: 80 }}>
                         <Col className="signupstuff">Password: </Col>
                         <Col className="signupstuff"><input type='password' placeholder="Password" onChange={handleChangePassword} /></Col>
                     </Row>
