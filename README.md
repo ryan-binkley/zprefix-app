@@ -30,6 +30,7 @@
 &emsp; This inventory management system is a simple way for individual users to keep track of their items. They can do so as a (default)visitor, or as a registered user. A visitor has limited permissions(only to read) whereas the registered user has the ability to modify, add, delete, and read all items in the database.
 
 ## Usage
+INITIAL LOGIN - You may use a custom account by signing up or you may use an account - Username: ryanb Password: rb
 The home page is the full inevntory. When arriving to this page, you will initially be set as a visitor.
 - **Sign Up**
    - This page will have you enter in a First Name, a Last Name, a Username, and a Password. Upon creating a new user, you will be redirected to the login page.
